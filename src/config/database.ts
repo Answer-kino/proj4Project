@@ -21,8 +21,8 @@ const pool: any = {};
       logger.info(`MySQL Connection : Version = ${rows[0][0].version}`);
       conn.release();
     }
-  } catch (error) {
-    logger.error(error);
+  } catch (error: any) {
+    logger.error(`[${error.code}] ${error.sqlMessage} \nerrno : ${error.errno} \nsqlState : ${error.sqlState}`);
     process.exit(1);
   }
 })();
