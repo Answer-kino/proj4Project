@@ -107,6 +107,11 @@ export default class ApiError extends Error {
       error.status = StatusCodes.INTERNAL_SERVER_ERROR;
     }
 
+    // proj4
+    if (error.message === "coordinates must be finite numbers") {
+      error.code = "ER_NOT_NUMBER";
+      error.status = StatusCodes.UNPROCESSABLE_ENTITY;
+    }
     return error;
   };
 }
