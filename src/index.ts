@@ -1,5 +1,5 @@
 import app from "./config/express";
-import "src/config/database";
+// import "src/config/database";
 import { logger } from "src/config/logger";
 import { Config } from "src/config/config";
 
